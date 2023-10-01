@@ -1,0 +1,7 @@
+#!/bin/bash
+# Created on 20180928 - for getting MAC address form ILOMs, chassis
+
+ssh $1 2>/dev/null <<HERE | awk '/macaddress = / { print $NF }'
+show /CMM/network macaddress
+HERE
+

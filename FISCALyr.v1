@@ -1,0 +1,29 @@
+CURRENT_DATE=`date +%m%d%Y`
+CURRENT_YEAR=`date +%Y`
+CURRENT_MONTH=`date +%m`
+ 
+CM=${CURRENT_MONTH:0:2}
+#CM=05         ####if you want to input the month 
+ 
+#Define the actual fiscal year depending on where #the current date falls within the fiscal year range.
+if [ $CM -lt 7 ]
+then
+FISCAL_YEAR=$CURRENT_YEAR
+else
+FISCAL_YEAR=`expr $CURRENT_YEAR + 1`
+fi
+ 
+OY=${FISCAL_YEAR:2:2}
+ 
+START_YEAR=`expr $FISCAL_YEAR - 1`
+START_FY='0701'$START_YEAR
+END_FY='0630'$FISCAL_YEAR
+ 
+ 
+echo 'CURRENT DATE '$CURRENT_DATE
+echo 'CURRENT_MONTH '$CURRENT_MONTH
+echo 'FISCAL YEAR '$FISCAL_YEAR
+echo 'FISCAL CODE '$OY
+echo 'START_FY '$START_FY
+echo 'END_FY '$END_FY
+

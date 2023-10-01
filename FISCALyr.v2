@@ -1,0 +1,11 @@
+#!/bash
+YEAR=$(date +%Y)
+
+if [  $(date +%m) -gt 6 ]
+then YEAR=$(expr $(date +%Y) + 1)
+fi
+
+OY=${YEAR:2:2}
+
+echo -e "CURRENT DATE $(date +%m%d%Y)\nCURRENT_MONTH $(date +%m)\nFISCAL YEAR $YEAR"
+echo -e "FISCAL CODE $OY \nSTART_FY 0701$(expr $YEAR - 1) \nEND_FY 0630$YEAR"

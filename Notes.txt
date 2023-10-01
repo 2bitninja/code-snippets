@@ -1,0 +1,53 @@
+## VNC Notes
+vncconfig & --> allows you to copy & paste form VNC to Windows
+
+# Current vncserver setting
+vncserver :3 -geometry 1880x1100 --> VNC session
+
+## SSH Notes
+SSH using a key that is not the default one. 
+ssh -i /path/to/key username@hostname
+Use sudo if the user doen't have promission to access key. 
+* path to private key not the public one! 
+
+## ILOM
+# Trun on or off HTTP & HTTPS web access
+Blade /SP/service
+Chassis /CMM/service
+turn on enabled, off disabled
+set /SP/services/https servicestate=disabled
+set /SP/services/http servicestate=disabled
+
+# User notes
+# Create user
+CLI Create User Syntax:
+create /SP|CMM/users/user_name_for_account password= password_for_account role=administrator|operator|a|u|c|r|o|s
+# Example
+create /SP/users/manacnt password=!ontheD00r role=o
+
+## SED Notes
+# this will remove all lines that have the word John in it
+sed --in-place /John/d filename
+# Find & replace 
+sed -i -e 's/old/new/g' filename
+
+## xterm
+-geometry This option specifies the preferred size and position of the VT102 window;
+-geometry 115x115+100+2
+-hold Turn on the hold resource, i.e., xterm will not immediately destroy its window when the shell command completes
+
+Run command in new xterm window
+xterm -geometry 115x115+100+2 -hold -e /bin/bash -c "ls -l"
+
+### Colors output
+cat file | GREP_COLOR='02;36' egrep --color=always 'splunk|$' | 
+# Will highlight one word in file
+GREP_COLOR='01;31' egrep -i --color=always 'netapp|ontap|$'
+# Will highlight two words from a file
+GREP_COLOR='01;31' egrep -i --color=always 'netapp|ontap|$'
+# Will highlight the whole line
+GREP_COLOR='01;32' egrep -i --color=always '^.*FLAN.*$|$'
+or highlight 2 different iteams lines
+GREP_COLOR='01;32' egrep -i --color=always '^.*FLAN.*$|^.*NetBackup.*$|$'
+
+sudo cat /export/unix/quads/mmcgee/20190503.md | GREP_COLOR='01;36' egrep --color=always 'splunk|$' | GREP_COLOR='01;31' egrep -i --color=always 'netapp|ontap|$' | GREP_COLOR='01;32'  egrep -i --color=always 'ldap|capam|$'

@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+#
+#ip a | grep BROADCAST|awk '{print $2}' > INT
+for f in $(ip a | grep BROADCAST|awk '{print $2}')
+do ip addr show $f|grep inet|awk '{print $2}' >f2
+ip addr show $f|grep ether|awk '{print $2}' >f3
+paste -d "," f2 f3
+done
