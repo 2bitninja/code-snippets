@@ -40,17 +40,32 @@ Web Browsers
 \e{1;33m  \e[0m -- yellow
 ```
 ### SED Notes
-Replace
+**Replace**
 ``` 
 sed -e '/pattern/pattern/'
 ```
-Replace Global
+__Replace Globally__
 ```
 sed -e '/pattern/pattern/g'
 ```
-Delete line
+**Delete line**
 ```
 sed -i '/pattern/d' file
 ```
 
+### Basic getopts templet
+```
+While getops "hv" option; do
+Case ${option} in
+h)  echo "help message"
+;;
+v) echo "version number"
+;;
+# optional invalid option
+\?) echo "you have entered an invalid option"
+;;
+esac
+done
+```
+This is you can have custom options at the end of you script.
 
