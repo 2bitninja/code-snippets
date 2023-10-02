@@ -50,4 +50,4 @@ GREP_COLOR='01;32' egrep -i --color=always '^.*FLAN.*$|$'
 or highlight 2 different iteams lines
 GREP_COLOR='01;32' egrep -i --color=always '^.*FLAN.*$|^.*NetBackup.*$|$'
 
-sudo cat /export/unix/quads/mmcgee/20190503.md | GREP_COLOR='01;36' egrep --color=always 'splunk|$' | GREP_COLOR='01;31' egrep -i --color=always 'netapp|ontap|$' | GREP_COLOR='01;32'  egrep -i --color=always 'ldap|capam|$'
+sudo cat /export/unix/quads/<redacted>/20190503.md | GREP_COLOR='01;36' egrep --color=always 'splunk|$' | GREP_COLOR='01;31' egrep -i --color=always 'netapp|ontap|$' | GREP_COLOR='01;32'  egrep -i --color=always 'ldap|capam|$'
