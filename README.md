@@ -1,21 +1,27 @@
 # code-snippets
-This some code snippets for possible reuse.
+This some code snippets and small scripts for possible reuse.
 
 ## File Descriptions 
 ### choice
-This code is for making a case statment in BASH
+This code snippet is for making a case statment in BASH
 
 ### HERE-ILOMc
 Used to get MAC addresses form ILOMs
 
 ### Notes.txt
-Notes on various 
+Notes on various things, such as; SSH, VNC, ILOM, SED, xterm, etc
 
 ### check-ports-PPSM.sh
 Script for generating ports listing for security paperwork
 
 ### grap-IP-MAC
-Gets IP address and MAC address on system for each device 
+Gets IP address and MAC address on system for each device
+
+### FISCAL
+Script made for someone that wanted to output fiscal info for a univerity. Both version of the scripts do the exact same thing.
+
+### Ping-to-IP.sh
+Script for getting an IP address from a hostname
 
 ## Commands & Variables  
 ### Open Aplications on a MAC
