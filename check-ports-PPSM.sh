@@ -2,7 +2,8 @@
 # Created on 20180521
 # Clean up & added DLA-SPLUNK-DATA 20180524 
 # Removed IPv6 excetion due to missing open ports 20180519
-sudo /bin/netstat -nutlp|egrep -v '(LISTENING|127.0.0.1|Active|Proto)'|awk '{print ","$NF,$1,","$4}' |sed -e 's/ /,/g' -e '/Xvnc/c\,Xvnc,tcp,VNC,5900,6000' -e '/splunkd/c\,splunkd,tcp,SPLUNK DEPLOYMENT MANAGER,8089' \
+sudo /bin/netstat -nutlp|egrep -v '(LISTENING|127.0.0.1|Active|Proto)'|awk '{print ","$NF,$1,","$4}' |sed -e 's/ /,/g' \
+-e '/Xvnc/c\,Xvnc,tcp,VNC,5900,6000' -e '/splunkd/c\,splunkd,tcp,SPLUNK DEPLOYMENT MANAGER,8089' \
 -e '/nessusd/c\,Nessus,TCP,Tenable Nessus Administrator Web User Interface,8834' \
 -e '/mongod/c\,Splunk,tcp,DLA-SPLUNK-DATA,8191' -e '/:111/c\,NFS,tcp,DLA-NFS,111,111\n,NFS,udp,DLA-NFS,111,111' \
 -e '/:123/c\,NTP,udp,Network Time Protocol,123,123' \
