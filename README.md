@@ -36,8 +36,12 @@ Web Browsers
 >
 
  ### BASH colors 
+ To add colors to BASH out the VAR must be in the center.
+ Example: ```echo -e "\e[1;33m Hello \e[0m"``` Hello will be displayed in yellow
  ```
 \e{1;33m  \e[0m -- yellow
+\e[1;33m  \e[0m -- orange
+\e[1;33m  \e[0m -- dark orange
 ```
 ### SED Notes
 **Replace**
@@ -51,6 +55,25 @@ sed -e '/pattern/pattern/g'
 **Delete line**
 ```
 sed -i '/pattern/d' file
+```
+To use varibles inside the sed statement, use of double " instead of single '
+```
+sed -e "/$VAR1/$VAR2/"
+```
+### Basic case statement templete
+```
+case $1 in
+    -h|--help)
+        printf '%s\n' 'foo command help:
+-h, --help: Show this help
+-q, --quiet: Run without diagnostics
+-v, --verbose: Add extra diagnostics'
+        exit 0
+        ;;
+    -v|--version)
+	    echo -e "This is version 0.0.01"
+        ;;	   
+esac
 ```
 
 ### Basic getopts templet
