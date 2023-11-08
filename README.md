@@ -78,7 +78,7 @@ esac
 
 ### Basic getopts templet
 ```
-While getops "hv" option; do
+While getopts "hv" option; do
 Case ${option} in
 h)  echo "help message"
 ;;
