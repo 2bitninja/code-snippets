@@ -1,5 +1,16 @@
 # code-snippets
-This some code snippets and small scripts for possible reuse.
+This repository contains some code snippets and small scripts for possible reuse.
+
+## Table of Contents
+
+* [File Descriptions](#file-descriptions)
+	* [choice](#choice)
+	* [HERE-ILOMc](#here-ilomc)
+	* [Notes](#notes)
+	* [check-ports-PPSM](#check-ports-ppsm)
+	* [grep-IP-MAC](#grep-ip-mac)
+	* [Ping-to-IP](#ping-to-ip)
+* [Commands and Variables](#commands-and-variables)
 
 ## File Descriptions 
 ### choice
@@ -8,22 +19,22 @@ This code snippet is for making a case statment in BASH
 ### HERE-ILOMc
 Used to get MAC addresses form ILOMs
 
-### Notes.txt
+### Notes
 Notes on various things, such as; SSH, VNC, ILOM, SED, xterm, etc
 
-### check-ports-PPSM.sh
+### check-ports-PPSM
 Script for generating ports listing for security paperwork
 
-### grap-IP-MAC
+### grep-IP-MAC
 Gets IP address and MAC address on system for each device
 
 ### FISCAL
 Script made for someone that wanted to output fiscal info for a univerity. Both version of the scripts do the exact same thing.
 
-### Ping-to-IP.sh
+### Ping-to-IP
 Script for getting an IP address from a hostname
 
-## Commands & Variables  
+## Commands and Variables  
 ### Open Aplications on a MAC
 Web Browsers 
 > open /Applications/Safari.app
