@@ -4,7 +4,7 @@ This repository contains some code snippets and small scripts for possible reuse
 ## Table of Contents
 
 * [File Descriptions](#file-descriptions)
-	* [choice](#choice)
+	* [Case Statement](#case-statement)
 	* [HERE-ILOMc](#here-ilomc)
 	* [Notes](#notes)
 	* [check-ports-PPSM](#check-ports-ppsm)
@@ -13,11 +13,47 @@ This repository contains some code snippets and small scripts for possible reuse
 * [Commands and Variables](#commands-and-variables)
 
 ## File Descriptions 
-### choice
-This code snippet is for making a case statment in BASH
+### Case Statement
+This code snippet demonstrates creating a case statement in BASH for making conditional choices.
+
+ **Basic Case statement templete**
+```
+case $1 in
+    -h|--help)
+        printf '%s\n' 'foo command help:
+-h, --help: Show this help
+-q, --quiet: Run without diagnostics
+-v, --verbose: Add extra diagnostics'
+        exit 0
+        ;;
+    -v|--version)
+	    echo -e "This is version 0.0.01"
+        ;;	   
+esac
+```
+Contents of the chose file
+```bash
+#!/bin/bash
+
+read -p "Enter your choice [yes/no]:" choice
+ 
+case $choice in
+     yes)
+          echo "Thank you"
+          echo "Your type: Yes"
+          ;;
+     no)
+          echo "Ooops"
+          echo "You type: No"
+          ;;
+     *)
+          echo "Sorry, invalid input"
+          ;;
+esac
+```
 
 ### HERE-ILOMc
-Used to get MAC addresses form ILOMs
+Used to retrieve MAC addresses from Integrated Lights Out of Management (ILOM) cards.
 
 ### Notes
 Notes on various things, such as; SSH, VNC, ILOM, SED, xterm, etc
