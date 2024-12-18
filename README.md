@@ -4,34 +4,20 @@ This repository contains some code snippets and small scripts for possible reuse
 ## Table of Contents
 
 * [File Descriptions](#file-descriptions)
-	* [Case Statement](#case-statement)
+	* [Case](#case)
 	* [HERE-ILOMc](#here-ilomc)
 	* [Notes](#notes)
 	* [check-ports-PPSM](#check-ports-ppsm)
 	* [grep-IP-MAC](#grep-ip-mac)
 	* [Ping-to-IP](#ping-to-ip)
 * [Commands and Variables](#commands-and-variables)
+	* [Open Aplications on a MAC](#open-aplications-on-a-mac)
+	* [BASH colors](#bash-colors)
+	* [SED Notes](#sed-notes)
 
 ## File Descriptions 
-### Case Statement
+### Case
 This code snippet demonstrates creating a case statement in BASH for making conditional choices.
-
- **Basic Case statement templete**
-```
-case $1 in
-    -h|--help)
-        printf '%s\n' 'foo command help:
--h, --help: Show this help
--q, --quiet: Run without diagnostics
--v, --verbose: Add extra diagnostics'
-        exit 0
-        ;;
-    -v|--version)
-	    echo -e "This is version 0.0.01"
-        ;;	   
-esac
-```
-Contents of the chose file
 ```bash
 #!/bin/bash
 
@@ -51,6 +37,22 @@ case $choice in
           ;;
 esac
 ```
+ **Basic Case statement templete**
+```
+case $1 in
+    -h|--help)
+        printf '%s\n' 'foo command help:
+-h, --help: Show this help
+-q, --quiet: Run without diagnostics
+-v, --verbose: Add extra diagnostics'
+        exit 0
+        ;;
+    -v|--version)
+	    echo -e "This is version 0.0.01"
+        ;;	   
+esac
+```
+Contents of the chose file
 
 ### HERE-ILOMc
 Used to retrieve MAC addresses from Integrated Lights Out of Management (ILOM) cards.
@@ -87,8 +89,8 @@ Web Browsers
  Example: ```echo -e "\e[1;33m Hello \e[0m"``` Hello will be displayed in yellow
  ```
 \e{1;33m  \e[0m -- yellow
-\e[1;33m  \e[0m -- orange
-\e[1;33m  \e[0m -- dark orange
+\e[1;32m  \e[0m -- orange
+\e[1;31m  \e[0m -- dark orange
 ```
 ### SED Notes
 **Replace**
@@ -106,21 +108,6 @@ sed -i '/pattern/d' file
 To use varibles inside the sed statement, use of double " instead of single '
 ```
 sed -e "/$VAR1/$VAR2/"
-```
-### Basic case statement templete
-```
-case $1 in
-    -h|--help)
-        printf '%s\n' 'foo command help:
--h, --help: Show this help
--q, --quiet: Run without diagnostics
--v, --verbose: Add extra diagnostics'
-        exit 0
-        ;;
-    -v|--version)
-	    echo -e "This is version 0.0.01"
-        ;;	   
-esac
 ```
 
 ### Basic getopts templet
